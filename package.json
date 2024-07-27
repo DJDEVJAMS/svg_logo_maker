@@ -1,0 +1,20 @@
+{
+  "name": "svg_logo_maker",
+  "version": "1.0.0",
+  "description": "built a Node.js command-line application that takes in user input to generate a logo and save it as an SVG ..",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^8.2.6",
+    "svg": "^0.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
