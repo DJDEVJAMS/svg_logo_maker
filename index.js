@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const colors = require('colors');
 const fs = require('fs');
-const { Circle, Triangle, Square } = require("lib/shapes.js");
+const { Circle, Triangle, Square } = require('./lib/shapes');
 
 function createSVG() {
   inquirer
@@ -30,23 +30,24 @@ function createSVG() {
     ])
     .then((output) => {
       const { text, text_color, shape, shape_color } = output;
+      console.log(output)
 
-      let logo;
+      let svg;
       switch (shape) {
         case 'circle':
-          logo = new Circle(text, text_color, shape, shape_color);
+          svg = new Circle(text, text_color, shape, shape_color);
           break;
         case 'triangle':
-          logo = new Triangle(text, text_color, shape, shape_color);
+          svg = new Triangle(text, text_color, shape, shape_color);
           break;
         case 'square':
-          logo = new Square(text, text_color, shape, shape_color);
+          svg = new Square(text, text_color, shape, shape_color);
           break;
       }
 
-      const logo_render = logo.render();
+      const svg_render = svg.render();
 
-      fs.writeFile("examples/logo.svg", logo_render, (err) =>
+      fs.writeFile("examples/logo.svg", svg_render, (err) =>
         err ? console.error(err) : console.log("Generated logo.svg")
       );
     });
